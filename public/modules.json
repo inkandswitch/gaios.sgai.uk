@@ -17,6 +17,7 @@
 		"./packages/threepane/",
 		"./packages/tldraw4/",
 		"./packages/codemirror-base/",
-		"./packages/codemirror-markdown/"
+		"./packages/codemirror-markdown/",
+		"./packages/sideboard/"
 	]
 }
