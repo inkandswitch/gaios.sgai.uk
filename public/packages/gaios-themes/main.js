@@ -17,14 +17,4 @@ export const plugins = [
 			return {}
 		},
 	})),
-	{
-		type: "patchwork:component",
-		id: "gaios-theme-defaults",
-		name: "GAIOS Theme Defaults",
-		tags: ["system-tray"],
-		async load() {
-			const {adoptGaiosDefaults} = await import("./defaults.js")
-			return adoptGaiosDefaults
-		},
-	},
 ]
