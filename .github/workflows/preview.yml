@@ -53,6 +53,7 @@ jobs:
         working-directory: site
         env:
           PATCHWORK_SYSTEM_DIRECTORY: ${{ github.workspace }}/system
+          PATCHWORK_FAVICON: public/gaios-preview.png
         run: |
           pnpm install --frozen-lockfile
           pnpm build

@@ -16,7 +16,7 @@ export default defineConfig({
 			syncServers:
 				process.env.KEYHIVE === "true" ? {keyhive: "keyhive"} : undefined,
 			themeColor: {light: "#ffffff", dark: "#ffffff"},
-			icons: {source: "public/gaios.png"},
+			icons: {source: process.env.PATCHWORK_FAVICON ?? "public/gaios.png"},
 			static: [
 				base
 					? {from: join(base, "static-dist"), watch: ".watch-ready"}
