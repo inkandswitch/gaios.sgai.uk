@@ -29,3 +29,7 @@ window.patchwork = await setup({
 })
 
 hideLoadingAnimation()
+
+window.patchwork.sw
+	.connectClassicSync()
+	.catch(error => console.error("connectClassicSync failed", error))
