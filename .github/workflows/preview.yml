@@ -1,0 +1,65 @@
+name: preview.gaios.sgai.uk
+
+on:
+  push:
+    branches: [main]
+  repository_dispatch:
+    types: [core-main, base-main]
+  workflow_dispatch:
+
+concurrency:
+  group: gaios-preview
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  preview:
+    name: preview.gaios.sgai.uk
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          path: site
+
+      - uses: actions/checkout@v7
+        with:
+          repository: inkandswitch/patchwork-next
+          ref: main
+          path: system
+
+      - uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+          version: 11.15.1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: |
+            site/pnpm-lock.yaml
+            system/pnpm-lock.yaml
+
+      - name: build system
+        working-directory: system
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm build
+
+      - name: build site
+        working-directory: site
+        env:
+          PATCHWORK_SYSTEM_DIRECTORY: ${{ github.workspace }}/system
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm build
+
+      - name: deploy
+        working-directory: site
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.PREVIEW_NETLIFY_SITE_ID }}
+        run: pnpm --package=netlify-cli@23.5.1 dlx netlify deploy --prod --dir dist --no-build

@@ -1,0 +1,22 @@
+{
+	"@patchwork": {
+		"type": "patchwork:module-settings"
+	},
+	"modules": [
+		"./packages/providers/",
+		"./packages/isolation/",
+		"./packages/drafts/",
+		"./packages/contact/",
+		"./packages/account-picker/",
+		"./packages/folder/",
+		"./packages/packages/",
+		"./packages/settings/",
+		"./packages/sync-indicator/",
+		"./packages/doc-openwith/",
+		"./packages/doc-presence/",
+		"./packages/threepane/",
+		"./packages/tldraw4/",
+		"./packages/codemirror-base/",
+		"./packages/codemirror-markdown/"
+	]
+}

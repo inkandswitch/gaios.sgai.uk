@@ -1,0 +1,86 @@
+name: update patchwork packages
+
+on:
+  repository_dispatch:
+    types: [core-published, base-published]
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: update-patchwork-packages
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          token: ${{ secrets.PATCHWORK_CROW_TOKEN }}
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: update
+        id: update
+        run: |
+          git config user.name "patchcrow[caw][crow][bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B update-patchwork-packages origin/main
+          if git rev-parse --verify -q origin/update-patchwork-packages > /dev/null; then
+            keep="$(git log --reverse --no-merges --format='%H %ae' origin/main..origin/update-patchwork-packages \
+              | grep -v ' 41898282+github-actions\[bot\]@users.noreply.github.com$' \
+              | cut -d' ' -f1)"
+            if [[ -n "$keep" ]]; then
+              echo "keeping:"
+              git log --no-walk --format='%h %s' $keep
+              git cherry-pick $keep
+            fi
+          fi
+          pnpm update --latest \
+            @inkandswitch/patchwork \
+            @inkandswitch/patchwork-pkg-base \
+            @inkandswitch/patchwork-e2e
+          git diff --quiet package.json pnpm-lock.yaml && echo "changed=false" >> "$GITHUB_OUTPUT" || echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: commit
+        if: steps.update.outputs.changed == 'true'
+        run: |
+          git commit -am "update patchwork packages"
+          git push --force origin update-patchwork-packages
+
+      - name: open or update pr
+        if: steps.update.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.PATCHWORK_CROW_TOKEN }}
+        run: |
+          git show origin/main:package.json > "$RUNNER_TEMP/previous-package.json"
+          body="$(pnpm list --depth 0 --json @inkandswitch/patchwork @inkandswitch/patchwork-pkg-base @inkandswitch/patchwork-e2e | node scripts/update-packages-pr-body.mjs "$RUNNER_TEMP/previous-package.json")"
+          pr="$(gh pr list \
+            --head update-patchwork-packages \
+            --base main \
+            --state open \
+            --json number \
+            --jq '.[0].number')"
+          if [[ -n "$pr" ]]; then
+            gh pr edit "$pr" --body "$body"
+          else
+            gh pr create \
+              --head update-patchwork-packages \
+              --base main \
+              --title "update patchwork packages" \
+              --body "$body"
+          fi
