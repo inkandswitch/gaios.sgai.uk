@@ -1,0 +1,8 @@
+@import url("./gaios.css");
+
+[theme="neutral"] {
+	--hue: 85;
+	--hue-chroma: 0;
+	--accent-chroma: 0;
+	--accent-lightness: 50%;
+}

@@ -1,0 +1,6 @@
+@import url("./gaios.css");
+
+[theme="teal"] {
+	--hue: 200;
+	--hue-chroma: 0.008;
+}
