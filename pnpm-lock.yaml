@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@inkandswitch/patchwork':
-        specifier: ^0.7.1
-        version: 0.7.2(@types/node@20.19.43)(solid-js@1.9.14)(supports-color@8.1.1)(vite@8.1.5(@types/node@20.19.43)(esbuild@0.28.1))(ws@8.21.1)
+        specifier: ^0.7.2
+        version: 0.7.2(@types/node@20.19.43)(solid-js@1.9.14)(supports-color@8.1.1)(vite@8.1.5(@types/node@20.19.43)(esbuild@0.28.1))(ws@8.21.2)
       '@inkandswitch/patchwork-pkg-base':
-        specifier: ^0.0.26
-        version: 0.0.26
+        specifier: ^0.0.34
+        version: 0.0.34
     devDependencies:
       '@inkandswitch/patchwork-e2e':
         specifier: ^0.2.0
@@ -632,8 +632,8 @@ packages:
       '@automerge/automerge': '*'
       '@automerge/automerge-repo': '*'
 
-  '@inkandswitch/patchwork-pkg-base@0.0.26':
-    resolution: {integrity: sha512-EdalNHgtwSA6s1rf5BS4tfG0oMOXP18drOO/TzNVLyZpFW7YfCzUAbleMWVHR4+aH46xQkzPFxjFuftTC4qn7Q==}
+  '@inkandswitch/patchwork-pkg-base@0.0.34':
+    resolution: {integrity: sha512-Z5p+hD+paFnOOUqvQSsEWhO8v4kgxryXn0gx0wGNfczsq0bJf2llUJmATvT7ioO9hm9LfVfJe99OVkccDiku0g==}
 
   '@inkandswitch/patchwork-plugins@1.2.0':
     resolution: {integrity: sha512-d9i+soLbEGYD8CJLXh3b+cYWUUKO/r38FVghbJQVAlTQ3v8zyVIRsHrh+BqvtrV4EF1blIu5/7Fz5qzPyt/6LA==}
@@ -814,8 +814,8 @@ packages:
     resolution: {integrity: sha512-hlSxxI9XO2yQfe9g6msd3g4xCfDqK5T5P0fRMLuaLHhxn4ViPrm+a+MUfhrvH2W962RGxcBwEGzLQyjbDG1gng==}
     hasBin: true
 
-  cbor-x@1.6.4:
-    resolution: {integrity: sha512-UGKHjp6RHC6QuZ2yy5LCKm7MojM4716DwoSaqwQpaH4DvZvbBTGcoDNTiG9Y2lByXZYFEs9WRkS5tLl96IrF1Q==}
+  cbor-x@1.6.5:
+    resolution: {integrity: sha512-yO64CxnSh6kp+pHNRK9IfwnMvCB+c8HvmUjQY/9l9YRF0/cAPka/tUHLwS64QqUpFCq3/OtbKziVJYXH2EaRig==}
 
   crelt@1.0.7:
     resolution: {integrity: sha512-aK6BbWfhf4U/wCcLHKPJl/xa6VkVstRaPywWtMKGwuOLc/wZTyQYuoxgvZnNsBvv7Kg3YTBQYYBCggcviQczuA==}
@@ -1103,8 +1103,8 @@ packages:
   w3c-keyname@2.2.8:
     resolution: {integrity: sha512-dpojBhNsCNN7T82Tm7k26A6G9ML3NkhDsnw9n/eoxSRlVBB4CEtIQ/KTCLI2Fwf3ataSXRhYFkQi3SlnFwPvPQ==}
 
-  ws@8.21.1:
-    resolution: {integrity: sha512-+0NTnW77fFN/DjQi6k/Sq/Yvk4Sgajw7urW8V+asjXnRgDs9gyGkdb7EzgfhA4goXsRIZKE28fzIXBHEzhuiWw==}
+  ws@8.21.2:
+    resolution: {integrity: sha512-54dMVAo4WIe6SKy3vBgN+9bJZqqQ8IMRevAkOLQALhi49qkkQDQfWdAZ8KQlXiEabw88ARXXdUrlvtbKQX+aKw==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
@@ -1120,16 +1120,16 @@ packages:
 
 snapshots:
 
-  '@automerge/automerge-repo-keyhive@0.3.0-alpha.sub.8b(supports-color@8.1.1)(ws@8.21.1)':
+  '@automerge/automerge-repo-keyhive@0.3.0-alpha.sub.8b(supports-color@8.1.1)(ws@8.21.2)':
     dependencies:
       '@automerge/automerge-repo': 2.6.0-subduction.37(supports-color@8.1.1)
       '@automerge/automerge-repo-network-websocket': 2.6.0-subduction.37(supports-color@8.1.1)
       '@automerge/automerge-subduction': 0.16.0
       '@keyhive/keyhive': 0.1.0-alpha.5
       '@noble/hashes': 2.2.0
-      cbor-x: 1.6.4
+      cbor-x: 1.6.5
       eventemitter3: 5.0.4
-      isomorphic-ws: 5.0.0(ws@8.21.1)
+      isomorphic-ws: 5.0.0(ws@8.21.2)
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -1156,10 +1156,10 @@ snapshots:
   '@automerge/automerge-repo-network-websocket@2.6.0-subduction.37(supports-color@8.1.1)':
     dependencies:
       '@automerge/automerge-repo': 2.6.0-subduction.37(supports-color@8.1.1)
-      cbor-x: 1.6.4
+      cbor-x: 1.6.5
       debug: 4.4.3(supports-color@8.1.1)
       eventemitter3: 5.0.4
-      ws: 8.21.1
+      ws: 8.21.2
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -1168,10 +1168,10 @@ snapshots:
   '@automerge/automerge-repo-network-websocket@2.6.0-subduction.47(supports-color@8.1.1)':
     dependencies:
       '@automerge/automerge-repo': 2.6.0-subduction.47(supports-color@8.1.1)
-      cbor-x: 1.6.4
+      cbor-x: 1.6.5
       debug: 4.4.3(supports-color@8.1.1)
       eventemitter3: 5.0.4
-      ws: 8.21.1
+      ws: 8.21.2
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -1190,13 +1190,13 @@ snapshots:
       '@automerge/automerge': 3.3.0-fragments.1
       '@automerge/automerge-subduction': 0.16.0
       bs58check: 4.0.0
-      cbor-x: 1.6.4
+      cbor-x: 1.6.5
       debug: 4.4.3(supports-color@8.1.1)
       eventemitter3: 5.0.4
       fast-sha256: 1.3.0
-      isomorphic-ws: 5.0.0(ws@8.21.1)
+      isomorphic-ws: 5.0.0(ws@8.21.2)
       uuid: 14.0.1
-      ws: 8.21.1
+      ws: 8.21.2
       xstate: 5.32.5
     transitivePeerDependencies:
       - bufferutil
@@ -1208,13 +1208,13 @@ snapshots:
       '@automerge/automerge': 3.3.2
       '@automerge/automerge-subduction': 0.16.1
       bs58check: 4.0.0
-      cbor-x: 1.6.4
+      cbor-x: 1.6.5
       debug: 4.4.3(supports-color@8.1.1)
       eventemitter3: 5.0.4
       fast-sha256: 1.3.0
-      isomorphic-ws: 5.0.0(ws@8.21.1)
+      isomorphic-ws: 5.0.0(ws@8.21.2)
       uuid: 14.0.1
-      ws: 8.21.1
+      ws: 8.21.2
       xstate: 5.32.5
     transitivePeerDependencies:
       - bufferutil
@@ -1563,7 +1563,7 @@ snapshots:
   '@img/sharp-win32-x64@0.35.3':
     optional: true
 
-  '@inkandswitch/patchwork-bootloader@0.6.2(@automerge/automerge-repo-keyhive@0.3.0-alpha.sub.8b(supports-color@8.1.1)(ws@8.21.1))(@automerge/automerge-repo@2.6.0-subduction.47(supports-color@8.1.1))(@automerge/automerge@3.3.2)(@automerge/vanillajs@2.6.0-subduction.47(supports-color@8.1.1))(supports-color@8.1.1)':
+  '@inkandswitch/patchwork-bootloader@0.6.2(@automerge/automerge-repo-keyhive@0.3.0-alpha.sub.8b(supports-color@8.1.1)(ws@8.21.2))(@automerge/automerge-repo@2.6.0-subduction.47(supports-color@8.1.1))(@automerge/automerge@3.3.2)(@automerge/vanillajs@2.6.0-subduction.47(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
       '@automerge/automerge-repo-network-messagechannel': 2.6.0-subduction.47(supports-color@8.1.1)
       '@automerge/automerge-repo-network-websocket': 2.6.0-subduction.47(supports-color@8.1.1)
@@ -1587,7 +1587,7 @@ snapshots:
     optionalDependencies:
       '@automerge/automerge': 3.3.2
       '@automerge/automerge-repo': 2.6.0-subduction.47(supports-color@8.1.1)
-      '@automerge/automerge-repo-keyhive': 0.3.0-alpha.sub.8b(supports-color@8.1.1)(ws@8.21.1)
+      '@automerge/automerge-repo-keyhive': 0.3.0-alpha.sub.8b(supports-color@8.1.1)(ws@8.21.2)
       '@automerge/vanillajs': 2.6.0-subduction.47(supports-color@8.1.1)
     transitivePeerDependencies:
       - '@types/react'
@@ -1621,7 +1621,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@inkandswitch/patchwork-pkg-base@0.0.26': {}
+  '@inkandswitch/patchwork-pkg-base@0.0.34': {}
 
   '@inkandswitch/patchwork-plugins@1.2.0(@automerge/automerge-repo@2.6.0-subduction.47(supports-color@8.1.1))(@automerge/automerge@3.3.2)(@inkandswitch/patchwork-filesystem@0.2.5(@automerge/automerge-repo@2.6.0-subduction.47(supports-color@8.1.1))(@automerge/automerge@3.3.2)(supports-color@8.1.1))(supports-color@8.1.1)':
     dependencies:
@@ -1640,15 +1640,15 @@ snapshots:
     dependencies:
       '@automerge/automerge-repo': 2.6.0-subduction.47(supports-color@8.1.1)
 
-  '@inkandswitch/patchwork@0.7.2(@types/node@20.19.43)(solid-js@1.9.14)(supports-color@8.1.1)(vite@8.1.5(@types/node@20.19.43)(esbuild@0.28.1))(ws@8.21.1)':
+  '@inkandswitch/patchwork@0.7.2(@types/node@20.19.43)(solid-js@1.9.14)(supports-color@8.1.1)(vite@8.1.5(@types/node@20.19.43)(esbuild@0.28.1))(ws@8.21.2)':
     dependencies:
       '@automerge/automerge': 3.3.2
       '@automerge/automerge-repo': 2.6.0-subduction.47(supports-color@8.1.1)
-      '@automerge/automerge-repo-keyhive': 0.3.0-alpha.sub.8b(supports-color@8.1.1)(ws@8.21.1)
+      '@automerge/automerge-repo-keyhive': 0.3.0-alpha.sub.8b(supports-color@8.1.1)(ws@8.21.2)
       '@automerge/automerge-repo-storage-indexeddb': 2.6.0-subduction.47(supports-color@8.1.1)
       '@automerge/automerge-subduction': 0.16.1
       '@automerge/vanillajs': 2.6.0-subduction.47(supports-color@8.1.1)
-      '@inkandswitch/patchwork-bootloader': 0.6.2(@automerge/automerge-repo-keyhive@0.3.0-alpha.sub.8b(supports-color@8.1.1)(ws@8.21.1))(@automerge/automerge-repo@2.6.0-subduction.47(supports-color@8.1.1))(@automerge/automerge@3.3.2)(@automerge/vanillajs@2.6.0-subduction.47(supports-color@8.1.1))(supports-color@8.1.1)
+      '@inkandswitch/patchwork-bootloader': 0.6.2(@automerge/automerge-repo-keyhive@0.3.0-alpha.sub.8b(supports-color@8.1.1)(ws@8.21.2))(@automerge/automerge-repo@2.6.0-subduction.47(supports-color@8.1.1))(@automerge/automerge@3.3.2)(@automerge/vanillajs@2.6.0-subduction.47(supports-color@8.1.1))(supports-color@8.1.1)
       '@inkandswitch/patchwork-elements': 6.0.0(@automerge/automerge-repo@2.6.0-subduction.47(supports-color@8.1.1))(@inkandswitch/patchwork-filesystem@0.2.5(@automerge/automerge-repo@2.6.0-subduction.47(supports-color@8.1.1))(@automerge/automerge@3.3.2)(supports-color@8.1.1))(@inkandswitch/patchwork-plugins@1.2.0(@automerge/automerge-repo@2.6.0-subduction.47(supports-color@8.1.1))(@automerge/automerge@3.3.2)(@inkandswitch/patchwork-filesystem@0.2.5(@automerge/automerge-repo@2.6.0-subduction.47(supports-color@8.1.1))(@automerge/automerge@3.3.2)(supports-color@8.1.1))(supports-color@8.1.1))(@inkandswitch/patchwork-providers@0.5.0(@automerge/automerge-repo@2.6.0-subduction.47(supports-color@8.1.1)))(solid-js@1.9.14)(supports-color@8.1.1)
       '@inkandswitch/patchwork-filesystem': 0.2.5(@automerge/automerge-repo@2.6.0-subduction.47(supports-color@8.1.1))(@automerge/automerge@3.3.2)(supports-color@8.1.1)
       '@inkandswitch/patchwork-plugins': 1.2.0(@automerge/automerge-repo@2.6.0-subduction.47(supports-color@8.1.1))(@automerge/automerge@3.3.2)(@inkandswitch/patchwork-filesystem@0.2.5(@automerge/automerge-repo@2.6.0-subduction.47(supports-color@8.1.1))(@automerge/automerge@3.3.2)(supports-color@8.1.1))(supports-color@8.1.1)
@@ -1791,7 +1791,7 @@ snapshots:
       '@cbor-extract/cbor-extract-win32-x64': 2.2.2
     optional: true
 
-  cbor-x@1.6.4:
+  cbor-x@1.6.5:
     optionalDependencies:
       cbor-extract: 2.2.2
 
@@ -1881,9 +1881,9 @@ snapshots:
   has-flag@4.0.0:
     optional: true
 
-  isomorphic-ws@5.0.0(ws@8.21.1):
+  isomorphic-ws@5.0.0(ws@8.21.2):
     dependencies:
-      ws: 8.21.1
+      ws: 8.21.2
 
   lightningcss-android-arm64@1.33.0:
     optional: true
@@ -2072,6 +2072,6 @@ snapshots:
 
   w3c-keyname@2.2.8: {}
 
-  ws@8.21.1: {}
+  ws@8.21.2: {}
 
   xstate@5.32.5: {}
