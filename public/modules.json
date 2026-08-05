@@ -12,6 +12,7 @@
 		"./packages/packages/",
 		"./packages/settings/",
 		"./packages/sync-indicator/",
+		"./packages/add-doc-to-sidebar-button/",
 		"./packages/doc-openwith/",
 		"./packages/doc-presence/",
 		"./packages/threepane/",
@@ -20,6 +21,8 @@
 		"./packages/codemirror-markdown/",
 		"./packages/sideboard/",
 		"./packages/theming/",
-		"./packages/gaios-themes/"
+		"./packages/gaios-themes/",
+		"./packages/tldraw5/"
+
 	]
 }
