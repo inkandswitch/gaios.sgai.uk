@@ -7,8 +7,6 @@
 [theme="dark"] {
 	color-scheme: light;
 
-	--hue: 85;
-	--hue-chroma: 0.01;
 	--bg-chroma-scale: 0.75;
 	--accent-chroma: 0.15;
 	--accent-lightness: 50%;
@@ -195,4 +193,45 @@
 	--syntax-deleted: var(--studio-deleted);
 	--syntax-changed: var(--studio-modified);
 	--syntax-content-separator: var(--rule-soft);
+}
+
+[theme="warm"] {
+	--hue: 85;
+	--hue-chroma: 0.01;
+}
+
+[theme="purple"] {
+	--hue: 296;
+	--hue-chroma: 0.01;
+}
+
+[theme="teal"] {
+	--hue: 200;
+	--hue-chroma: 0.008;
+}
+
+[theme="neutral"] {
+	--hue: 85;
+	--hue-chroma: 0;
+	--accent-chroma: 0;
+	--accent-lightness: 50%;
+}
+
+[theme="dark"] {
+	color-scheme: dark;
+
+	--hue: 85;
+	--hue-chroma: 0.012;
+	--accent-chroma: 0.13;
+	--accent-lightness: 74%;
+
+	--l-paper: 16%;
+	--l-paper-tint: 22%;
+	--l-ink: 93%;
+	--l-ink-soft: 84%;
+	--l-ink-mute: 68%;
+	--l-ink-dim: 52%;
+	--l-rule: 90%;
+	--l-rule-soft: 34%;
+	--l-rule-hair: 28%;
 }

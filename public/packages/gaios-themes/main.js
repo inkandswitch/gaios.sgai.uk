@@ -12,7 +12,7 @@ export const plugins = [
 		id: theme.id,
 		name: theme.name,
 		colorScheme: theme.colorScheme,
-		style: new URL(`./${theme.id}.css`, import.meta.url).href,
+		style: new URL("./gaios.css", import.meta.url).href,
 		async load() {
 			return {}
 		},
