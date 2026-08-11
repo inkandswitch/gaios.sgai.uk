@@ -6,8 +6,13 @@ import type { HazelDoc, HazelToParent, ParentToHazel } from "./hazel-doc"
 const HAZEL_URL = "https://hazel.org/build/patchwork/?name=Patchwork"
 
 export const Tool = ({ docUrl }: { docUrl: AutomergeUrl }) => {
-	const handle = useDocument<HazelDoc>(docUrl, { suspense: true })
+	const [doc, changeDoc] = useDocument<HazelDoc>(docUrl, { suspense: true })
 	const frame = useRef<HTMLIFrameElement>(null)
+
+	// Hazel asks for state at its own pace, so the listener reads the document
+	// through a ref rather than resubscribing on every change.
+	const latest = useRef(doc)
+	latest.current = doc
 
 	const send = useCallback((message: ParentToHazel) => {
 		frame.current?.contentWindow?.postMessage(message, "*")
@@ -22,14 +27,14 @@ export const Tool = ({ docUrl }: { docUrl: AutomergeUrl }) => {
 			switch (message.t) {
 				case "init":
 					// Hazel stays blank until the parent answers its readiness signal.
-					send({ t: "state", state: handle.doc() })
+					if (latest.current) send({ t: "state", state: latest.current })
 					break
 				case "ping":
 					send({ t: "pong", message: "Pong from Patchwork!" })
 					break
 				case "state":
 					// Hazel sends changed pieces only, with removals listed separately.
-					handle.change((doc) => {
+					changeDoc((doc) => {
 						doc.title = message.state.title
 						for (const [id, piece] of Object.entries(message.state.pieces)) {
 							doc.pieces[id] = piece
@@ -44,9 +49,8 @@ export const Tool = ({ docUrl }: { docUrl: AutomergeUrl }) => {
 
 		window.addEventListener("message", onMessage)
 		return () => window.removeEventListener("message", onMessage)
-	}, [handle, send])
+	}, [changeDoc, send])
 
-	const doc = handle.doc()
 	useEffect(() => {
 		if (doc) send({ t: "state", state: doc })
 	}, [doc, send])

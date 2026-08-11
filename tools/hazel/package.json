@@ -9,7 +9,8 @@
 		".": "./dist/index.js"
 	},
 	"scripts": {
-		"build": "vite build"
+		"typecheck": "tsc --noEmit",
+		"build": "tsc --noEmit && vite build"
 	},
 	"dependencies": {
 		"@automerge/automerge-repo": "^2.5.4",

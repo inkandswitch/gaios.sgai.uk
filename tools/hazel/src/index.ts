@@ -1,6 +1,6 @@
 import type { Plugin } from "@inkandswitch/patchwork-plugins"
 import { createRoot } from "react-dom/client"
-import { createElement } from "react"
+import { createElement, Suspense } from "react"
 import { RepoContext } from "@automerge/automerge-repo-react-hooks"
 import "./index.css"
 
@@ -30,7 +30,12 @@ export const plugins: Plugin<any>[] = [
 					createElement(
 						RepoContext.Provider,
 						{ value: context.repo },
-						createElement(Tool, { docUrl: doc.url }),
+						createElement(
+							Suspense,
+							// useDocument suspends until the document has loaded.
+							{ fallback: null },
+							createElement(Tool, { docUrl: doc.url }),
+						),
 					),
 				)
 				return () => root.unmount()
