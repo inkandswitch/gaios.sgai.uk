@@ -1,0 +1,1 @@
+import"./notebook-DqLO4fFe.js";import{n}from"./model-DJAyEITR.js";const o=e=>{Object.assign(e,n({theory:"empty"})),e.name="New model"},m=e=>e.name,s=(e,t)=>{e.name=t},c={init:o,getTitle:m,setTitle:s};export{c as dataType,o as init};

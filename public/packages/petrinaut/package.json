@@ -1,0 +1,16 @@
+{
+	"name": "petrinaut",
+	"title": "Petrinaut",
+	"version": "0.0.2",
+	"type": "module",
+	"private": true,
+	"exports": {
+		".": "./dist/index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/inkandswitch/patchwork-tools.git",
+		"directory": "petrinaut"
+	},
+	"gitHead": "b5888515f4daa241b046583c55bb7c51fc11e111"
+}

@@ -22,7 +22,9 @@
 		"./packages/sideboard/",
 		"./packages/theming/",
 		"./packages/gaios-themes/",
-		"./packages/tldraw5/"
-
+		"./packages/tldraw5/",
+		"./packages/catcolab/",
+		"./packages/petrinaut/",
+		"./packages/hazel/"
 	]
 }

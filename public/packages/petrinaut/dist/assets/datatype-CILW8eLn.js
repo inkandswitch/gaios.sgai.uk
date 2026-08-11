@@ -1,0 +1,1 @@
+const i="Untitled Petri Net",n={setTitle:(t,e)=>{t.title=e},getTitle:t=>t.title||"Untitled Petri Net",init:t=>{t.title=i,t.petriNetDefinition={places:[],transitions:[],types:[],parameters:[],differentialEquations:[]}}};export{n as PetrinautDataType};

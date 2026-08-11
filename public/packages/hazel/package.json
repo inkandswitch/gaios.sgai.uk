@@ -1,0 +1,10 @@
+{
+	"name": "hazel",
+	"title": "Hazel",
+	"version": "0.0.2",
+	"type": "module",
+	"private": true,
+	"exports": {
+		".": "./dist/index.js"
+	}
+}
