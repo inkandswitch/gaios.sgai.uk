@@ -1,1 +1,0 @@
-function c(o,t){if(!t)return;const r=t.morGeneratorLabel(o);if(r)return r.join(".");const n=t.morPresentation(o);if(n&&n.dom.tag==="Basic"&&n.cod.tag==="Basic"){const e=t.obGeneratorLabel(n.dom.content),a=t.obGeneratorLabel(n.cod.content);if(e&&a)return`${e.join(".")}→${a.join(".")}`}}export{c as m};

@@ -6,11 +6,5 @@
 	"private": true,
 	"exports": {
 		".": "./dist/index.js"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/inkandswitch/CatColab.git",
-		"directory": "packages/gaios"
-	},
-	"gitHead": "34f7dceeae54296179451c8f03875f32b7aef02d"
+	}
 }
