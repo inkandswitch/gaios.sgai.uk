@@ -1,0 +1,2 @@
+(function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode(".hazel{display:flex;flex-direction:column;width:100%;height:100%;min-height:0;background:var(--editor-fill, #fff)}.hazel-embed-container{display:flex;flex-direction:column;flex:1;min-width:0;min-height:0;width:100%;height:100%}")),document.head.appendChild(e)}}catch(i){console.error("vite-plugin-css-injected-by-js",i)}})();
+import{p as r}from"./assets/index-CHNVpsdO.js";export{r as plugins};
