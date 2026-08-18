@@ -18,6 +18,7 @@
 		"./packages/tldraw4/",
 		"./packages/codemirror-base/",
 		"./packages/codemirror-markdown/",
+		"./packages/embed/",
 		"./packages/sideboard/",
 		"./packages/theming/",
 		"./packages/gaios-themes/",
