@@ -22,7 +22,7 @@
 		"./packages/theming/",
 		"./packages/gaios-themes/",
 		"./packages/tldraw5/",
-		"./packages/catcolab/",
+		"https://next.catcolab.org/gaios/",
 		"./packages/petrinaut/",
 		"./packages/hazel/"
 	]
