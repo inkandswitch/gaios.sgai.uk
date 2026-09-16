@@ -24,6 +24,8 @@
 		"./packages/tldraw5/",
 		"https://next.catcolab.org/gaios/",
 		"./packages/petrinaut/",
-		"./packages/hazel/"
+		"./packages/chat/",
+		"./packages/comments-view/",
+		"./packages/raw/"
 	]
 }
